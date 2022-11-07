@@ -1,0 +1,36 @@
+DB입력
+
+UPDATE "HTINFO" SET image = 'http://www.ramadaddm.com/img/accommodation/suite_img01.jpg' WHERE SEQ ='29';
+UPDATE "HTINFO" SET image = 'https://m.ambatel.com/RES/PRODUCT/201711/Novotel%20-%20Deluxe%20Twin%20(Night)%20Mobile%20750%20x%20420_20171117173015.jpg' WHERE SEQ ='8';
+UPDATE "HTINFO" SET image = 'https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2021/02/04/0204/Park-Hyatt-Seoul-P769-Presidential-Suite.jpg/Park-Hyatt-Seoul-P769-Presidential-Suite.16x9.jpg?imwidth=1280' WHERE SEQ ='25';
+UPDATE "HTINFO" SET image = 'https://cache.marriott.com/marriottassets/marriott/SELJW/seljw-exterior-5640-hor-wide.jpg?interpolation=progressive-bilinear&downsize=1440px:*' WHERE SEQ ='1';
+UPDATE "HTINFO" SET image = 'http://www.rayhouse.com/wp-content/uploads/projects/accommodation/pj_ah-01_01.jpg' WHERE SEQ ='16';
+UPDATE "HTINFO" SET image = 'https://pix8.agoda.net/hotelImages/432/43219/43219_16060819460043299934.jpg?ca=13&ce=1&s=1024x768' WHERE SEQ ='92';
+
+UPDATE "HTINFO" SET image = 'https://images.trvl-media.com/hotels/11000000/10090000/10083300/10083293/1f159b25.jpg?impolicy=resizecrop&rw=1200&ra=fit' WHERE SEQ ='84';
+UPDATE "HTINFO" SET image = 'https://pix8.agoda.net/hotelImages/491/49161/49161_16061612040043640513.jpg?ca=6&ce=1&s=1024x768' WHERE SEQ ='118';
+UPDATE "HTINFO" SET image = 'https://exp.cdn-hotels.com/hotels/1000000/20000/14100/14043/78b7f3bc_z.jpg?impolicy=fcrop&w=1000&h=666&q=medium' WHERE SEQ ='40';
+UPDATE "HTINFO" SET image = 'https://exp.cdn-hotels.com/hotels/3000000/2860000/2853700/2853615/035e5fb3_z.jpg?impolicy=fcrop&w=1000&h=666&q=medium' WHERE SEQ ='41';
+UPDATE "HTINFO" SET image = 'https://pix8.agoda.net/hotelImages/431/43154/43154_14032706440018871877.jpg?ca=2&ce=1&s=1024x768' WHERE SEQ ='44';
+UPDATE "HTINFO" SET image = 'https://www.hotelscombined.co.kr/rimg/himg/29/00/f5/revato-14351-7295067-986949.jpg?width=720&height=576&crop=true' WHERE SEQ ='45';
+
+UPDATE "MTINFO" SET image = 'http://m-plus-motel.seoulhotelskorea.com/data/Photos/Large/6009/600963/600963396.JPEG' WHERE SEQ ='219';
+UPDATE "MTINFO" SET image = 'https://www.hotelscombined.co.kr/rimg/himg/79/b7/31/expediav2-4744096-d69d44-651427.jpg?width=720&height=576&crop=true' WHERE SEQ ='228';
+UPDATE "MTINFO" SET image = 'https://pix8.agoda.net/hotelImages/876/876913/876913_15041512270026879035.jpg?ca=13&ce=1' WHERE SEQ ='36';
+UPDATE "MTINFO" SET image = 'https://mblogthumb-phinf.pstatic.net/20150818_169/vismajor21615_1439872922742ItgS8_JPEG/4.jpg?type=w2' WHERE SEQ ='48';
+UPDATE "MTINFO" SET image = 'https://modo-phinf.pstatic.net/20170412_122/1492000849745TnLFS_JPEG/mosaocMl5j.jpeg?type=w720' WHERE SEQ ='100';
+UPDATE "MTINFO" SET image = 'https://pix8.agoda.net/hotelImages/248/248294/248294_14101413400022728271.jpg?ca=3&ce=1&s=1024x768' WHERE SEQ ='197';
+
+UPDATE "CPINFO" SET image = 'https://mblogthumb-phinf.pstatic.net/MjAxODA2MTJfNTQg/MDAxNTI4NzY3NDUzNjE2.pqLhi5PO04CyCVKiVDufxW8a0t4562Jp1S81xh-l2Bsg.d8SdVmq6zogUS5nlpNuqUDjAXLhmGGnLpX0Wmj_w0Dsg.JPEG.seongdonggu1/20170714_175720.jpg?type=w800' WHERE SEQ ='1';
+UPDATE "CPINFO" SET image = 'https://img.hani.co.kr/imgdb/resize/2021/0611/162331207714_20210611.JPG' WHERE SEQ ='8';
+UPDATE "CPINFO" SET image = 'http://musuachwi.com/wp-content/uploads/2021/09/mountain_01_01-1024x683.jpg' WHERE SEQ ='9';
+UPDATE "CPINFO" SET image = 'https://gocamping.or.kr/upload/camp/1418/thumb/thumb_720_3434AQF3179Yx5whxZ7iErTn.jpg' WHERE SEQ ='11';
+UPDATE "CPINFO" SET image = 'https://www.seoul.go.kr/res_newseoul_story/campingjang/images/gd_pic02.jpg' WHERE SEQ ='28';
+UPDATE "CPINFO" SET image = 'https://www.seoul.go.kr/res_newseoul_story/campingjang/images/2021_nanji_pic03_6.jpg' WHERE SEQ ='30';
+
+UPDATE "GHINFO" SET image = 'https://pix8.agoda.net/hotelImages/305/305643/305643_16092816480047062686.jpg?ca=6&ce=1&s=1024x768' WHERE SMM_SEQ ='92';
+UPDATE "GHINFO" SET image = 'https://images.stayfolio.com/system/pictures/images/000/056/624/original/21251526f36520cf8ad32801be98d4f43f197971.jpg?1603328750' WHERE SMM_SEQ ='99';
+UPDATE "GHINFO" SET image = 'https://ldb-phinf.pstatic.net/20211102_68/1635799257302w8wqm_JPEG/gRZTWUDhybL16RgU9Cu7KHDw.jpg?type=w1500_60_sharpen' WHERE SMM_SEQ ='170';
+UPDATE "GHINFO" SET image = 'https://a0.muscache.com/im/pictures/643f8823-61fd-44e4-bb51-42c1453c3144.jpg?im_w=1200' WHERE SMM_SEQ ='23';
+UPDATE "GHINFO" SET image = 'https://a0.muscache.com/im/pictures/72618280-0af3-4b40-b215-ab8206913b19.jpg?im_w=720' WHERE SMM_SEQ ='214';
+UPDATE "GHINFO" SET image = 'https://a0.muscache.com/im/pictures/miso/Hosting-46367850/original/59a39903-575c-4d7a-b54a-39b56547f9e6.jpeg?im_w=1200' WHERE SMM_SEQ ='279';
