@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8">
+    <title th:text="${ghInfo?.SMM_NAME}"></title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- 폰트 어썸 -->
+    <script src="https://kit.fontawesome.com/755e6c680d.js" crossorigin="anonymous"></script>
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico"/>
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet"/>
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+<style>
+    .div-bg1 {
+        background-color: #F5F5F5;
+    }
+
+    .root_middle {
+        margin: auto !important;
+    }
+</style>
+
+<div class="container-xxl bg-white p-0">
+    <!-- Spinner Start -->
+    <div id="spinner"
+         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-dark px-0">
+        <div class="row gx-0">
+            <div class="col-lg-3 bg-dark d-none d-lg-block">
+                <a href="index"
+                   class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
+                    <h1 class="m-0 text-primary text-uppercase">방방곡곡</h1>
+                </a>
+            </div>
+            <div class="col-lg-9">
+                <div class="row gx-0 bg-white d-none d-lg-flex">
+                    <div class="col-lg-7 px-5 text-start">
+                        <div class="h-100 d-inline-flex align-items-center py-2 me-4">
+                            <i class="fa fa-envelope text-primary me-2"></i>
+                            <p class="mb-0">green@example.com</p>
+                        </div>
+                        <div class="h-100 d-inline-flex align-items-center py-2">
+                            <i class="fa fa-phone-alt text-primary me-2"></i>
+                            <p class="mb-0">010 - 1234 - 5678</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 px-5 text-end">
+                        <div class="d-inline-flex align-items-center py-2">
+                            <a sec:authorize="isAnonymous()" th:href="@{/user/login}" class="nav-item nav-link"><i
+                                    class="fa-solid fa-user"></i></a>
+                            <a sec:authorize="isAuthenticated()" th:href="@{/profile}" class="nav-item nav-link"><i
+                                    class="fa-solid fa-user"></i></a>
+                            <!--                                <a class="me-3" href="/user/login"><i class="fa-solid fa-user"></i></a>-->
+                            <!--                                <a sec:authorize="isAuthenticated()" th:href="@{/user/profile}" class="nav-item nav-link">마이페이지</a>-->
+                            <a class="me-3" href="errorPage"><i class="fab fa-instagram"></i></a>
+                            <!--                                <a href="https://htmlcodex.com/hotel-html-template-pro" class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">Premium Version<i class="fa fa-arrow-right ms-3"></i></a>-->
+                            <a class="`" href="errorPage"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <nav class="navbar navbar-expand-lg bg-dark navbar-dark p-3 p-lg-0">
+                    <a href="index.html" class="navbar-brand d-block d-lg-none">
+                        <h1 class="m-0 text-primary text-uppercase">방방곡곡</h1>
+                    </a>
+                    <button type="button" class="navbar-toggler" data-bs-toggle="collapse"
+                            data-bs-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav mr-auto py-0">
+                            <a href="index" class="nav-item nav-link active">홈</a>
+                            <a href="about" class="nav-item nav-link">소개</a>
+                            <a href="service" class="nav-item nav-link">카테고리</a>
+
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">호텔</a>
+                                <div class="dropdown-menu rounded-0 m-0">
+                                    <a href="HTList1" class="dropdown-item">강남/서초</a>
+                                    <a href="HTList2" class="dropdown-item">종로/동대문/중구</a>
+                                    <a href="HTList1" class="dropdown-item">마포/서대문</a>
+                                    <a href="HTList1" class="dropdown-item">용산/금천/영등포</a>
+                                </div>
+                            </div>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">모텔</a>
+                                <div class="dropdown-menu rounded-0 m-0">
+                                    <a href="MTList" class="dropdown-item">강남/역삼/삼성</a>
+                                    <a href="MTList" class="dropdown-item">서초/신사/방배</a>
+                                    <a href="MTList" class="dropdown-item">신림/사당/동작</a>
+                                    <a href="MTList" class="dropdown-item">구로/금천/신도림</a>
+                                </div>
+                            </div>
+                            <a href="CPList" class="nav-item nav-link">캠핑</a>
+                            <a href="GHList" class="nav-item nav-link active">게스트하우스</a>
+                        </div>
+                        <a sec:authorize="isAnonymous()" th:href="@{/user/login}" href="errorPage"
+                           class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">로그인<i
+                                class="fa fa-arrow-right ms-3"></i></a>
+                        <a sec:authorize="isAuthenticated()" th:href="@{/profile}" href="errorPage"
+                           class="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block">마이페이지<i
+                                class="fa fa-arrow-right ms-3"></i></a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+        <div class="layout-container">
+
+            <!-- Layout container -->
+            <div class="layout-page">
+                <!-- Content wrapper -->
+                <div class="content-wrapper">
+                    <div class="card">
+
+                        <!-- About Start -->
+                        <div class="container-xxl py-5">
+
+                            <div class="container">
+                                <div align="right">
+                                    <a class="btn btn-sm btn-primary" href="GHList">게스트하우스 목록</a>
+                                </div>
+                                <div class="row g-5 align-items-center">
+                                    <!-- 이미지 -->
+                                    <div class="col-lg-6">
+                                        <div class="row g-3">
+                                            <div class="col-30 text-end">
+                                                <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s"
+                                                     th:src="${ghInfo.image}" style="margin-top:15%;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 이미지 끝 -->
+                                    <div class="col-lg-6">
+                                        <div class="row g-4">
+                                            <h2 th:text="${ghInfo.SMM_NAME}" id="name"></h2>
+                                            <div class="ps-2">
+                                                &nbsp;<small class="fa fa-star text-primary"></small>
+                                                <small class="fa fa-star text-primary"></small>
+                                                <small class="fa fa-star text-primary"></small>
+                                                <small class="fa fa-star text-primary"></small>
+                                                <small class="fa fa-star text-primary"></small>
+                                            </div>
+                                            <div class="col-lg-20 col-md- wow fadeInUp" data-wow-delay="0.1s">
+                                                <div class="room-item shadow rounded overflow-hidden">
+                                                    <div class="div-bg1">
+                                                        <div style="padding:10px;">         <!-- 여백 주기 -->
+
+                                                            <!--                <td th:text="${ghInfo.SMM_NAME}" id="name"></td>-->
+                                                            <p th:text="${ghInfo.SMM_ADDR}" id="address"
+                                                               class="mb-4"></p>
+                                                            <div class="row g-3 pb-4">
+                                                                <div class="card mb-4"></div>
+                                                                <div class="d-flex mb-3">
+                                                                    <div class="ps-20">&nbsp;
+                                                                        <small class="border-end me-3 pe-3"><i
+                                                                                class="fa-solid fa-house-user text-danger fa-2x"></i></small>
+                                                                        <small class="border-end me-3 pe-3"><i
+                                                                                class="fa fa-wifi text-primary fa-2x"></i></small>
+                                                                        <small class="border-end me-3 pe-3"><i
+                                                                                class="fa fa-bed text-primary fa-2x"></i></small>
+                                                                        <small class="border-end me-3 pe-3"><i
+                                                                                class="fa fa-bath text-primary fa-2x"></i></small>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <a class="btn btn-primary py-2 px-3 mt-2"
+                                                               th:href="${ghInfo.SMM_HOMEPAGE}">더 알아보기</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                            <a class="btn btn-dark rounded py-2 px-3 mt-2"
+                                                               th:href="@{/reserve(SMM_SEQ=${ghInfo.SMM_SEQ})}">예약하기</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- About End -->
+
+
+                            <!-- map -->
+                            <br><br>
+                            <div class="div-bg1">
+                                <div class="col-lg-20 col-md- wow fadeInUp" data-wow-delay="0.1s">
+                                    <div class="room-item shadow rounded overflow-hidden">
+                                        <div style="padding: 50px 0px 0px 50px;">
+
+                                            <h3 class="mb-4">&nbsp;위치</h3>
+                                        </div>
+                                        <div class="root_middle" id="map" style="width:90%;height:350px;"></div>
+
+                                        <script type="text/javascript"
+                                                src="//dapi.kakao.com/v2/maps/sdk.js?appkey=99ad15494eaf70b9a331b52e43396379&libraries=services"></script>
+                                        <script>
+                                            var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+                                                mapOption = {
+                                                    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                                                    level: 3 // 지도의 확대 레벨
+                                                };
+
+                                            // 지도를 생성합니다
+                                            var map = new kakao.maps.Map(mapContainer, mapOption);
+
+                                            // 주소-좌표 변환 객체를 생성합니다
+                                            var geocoder = new kakao.maps.services.Geocoder();
+
+
+                                            // var name;	//변수를 선언
+                                            // document.getElementById("address").innerHTML=name;
+
+                                            // 주소로 좌표를 검색합니다
+                                            geocoder.addressSearch(document.getElementById("address").innerHTML, function (result, status) {
+
+                                                // 정상적으로 검색이 완료됐으면
+                                                if (status === kakao.maps.services.Status.OK) {
+
+                                                    var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+                                                    // 결과값으로 받은 위치를 마커로 표시합니다
+                                                    var marker = new kakao.maps.Marker({
+                                                        map: map,
+                                                        position: coords
+                                                    });
+
+                                                    var full = "";	//변수를 선언
+                                                    var name = document.getElementById("name").innerHTML;
+                                                    full += "<div style=\"width:150px;text-align:center;padding:6px 0;\">" + name + "</div>";
+
+                                                    // 인포윈도우로 장소에 대한 설명을 표시합니다
+                                                    var infowindow = new kakao.maps.InfoWindow({
+                                                        content: full
+                                                    });
+                                                    infowindow.open(map, marker);
+
+                                                    // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+                                                    map.setCenter(coords);
+                                                }
+                                            });
+                                        </script>
+                                        <br><br>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- map end -->
+
+                            <!-- Testimonial Start -->
+                            <div class="container-xxl testimonial my-5 py-5 bg-dark wow zoomIn" data-wow-delay="0.1s">
+                                <div class="container">
+                                    <div class="owl-carousel testimonial-carousel py-5">
+                                        <div class="testimonial-item position-relative bg-white rounded overflow-hidden"
+                                             th:each="board, state:${boardList}">
+                                            <h4><a style="color:black" th:href="@{/getBoard(seq=${board.seq})}"
+                                                   th:text="${board.title}"></a>
+                                            </h4><br>
+                                            <p><a style="color:black" th:href="@{/getBoard(seq=${board.seq})}"
+                                                  th:text="${board.content}"></a>
+                                            </p><br>
+                                            <div class="d-flex align-items-center">
+                                                <img class="img-fluid flex-shrink-0 rounded" src="img/empty-image.jpg"
+                                                     style="width: 45px; height: 45px;">
+                                                <div class="ps-3">
+                                                    <h6 class="fw-bold mb-1" th:text="${board.writer}"></h6>
+                                                    <small th:text="${board.createDate}"></small>
+                                                </div>
+                                            </div>
+                                            <i class="fa fa-quote-right fa-3x text-primary position-absolute end-0 bottom-0 me-4 mb-n1"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br><br><br><br><br><br>
+                            <!-- Testimonial End -->
+
+
+                            <!-- 주변 게하 -->
+                            <div class="div-bg1">
+                                <div class="room-item shadow rounded overflow-hidden">
+                                    <div class="container-xxl py-5">
+                                        <div class="container">
+                                            <h3 class="mb-4">&nbsp;주변 숙소</h3>
+                                            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                                                <div class="row g-4">
+                                                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                                                        <div class="room-item shadow rounded overflow-hidden">
+                                                            <div class="position-relative">
+                                                                <img class="img-fluid" src="img/GH/GH_JongRo_4.PNG"
+                                                                     alt="">
+                                                                <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">예약
+                                                                    가능</small>
+                                                            </div>
+                                                            <div class="p-4 mt-2">
+                                                                <div class="d-flex justify-content-between mb-3">
+                                                                    <h5 class="mb-0">아리랑하우스</h5>
+                                                                    <div class="ps-2">
+                                                                        <small class="fa fa-star text-primary"></small>
+                                                                        <small class="fa fa-star text-primary"></small>
+                                                                        <small class="fa fa-star text-primary"></small>
+                                                                        <small class="fa fa-star text-primary"></small>
+                                                                        <small class="fa fa-star text-primary"></small>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex mb-3">
+                                                                    <small class="border-end me-3 pe-3"><i
+                                                                            class="fa-solid fa-house-user text-danger me-2x"></i></small>
+                                                                    <small class="border-end me-3 pe-3"><i
+                                                                            class="fa fa-wifi text-primary me-2x"></i></small>
+                                                                    <small class="border-end me-3 pe-3"><i
+                                                                            class="fa fa-bed text-primary me-2x"></i></small>
+                                                                    <small><i class="fa fa-bath text-primary me-2"></i></small>
+                                                                </div>
+                                                                <p class="text-body mb-3">서울 종로구 계동길 49-20</p>
+                                                                <div class="d-flex justify-content-between">
+                                                                    <a class="btn btn-sm btn-primary rounded py-2 px-4"
+                                                                       href="getGH?SMM_SEQ=23">정보 보기</a>
+                                                                    <a class="btn btn-sm btn-dark rounded py-2 px-4"
+                                                                       href="">예약하기</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                                                        <div class="room-item shadow rounded overflow-hidden">
+                                                            <div class="position-relative">
+                                                                <img class="img-fluid" src="img/GH/GH_JongRo_5.PNG"
+                                                                     alt="">
+                                                                <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">예약
+                                                                    가능</small>
+                                                            </div>
+                                                            <div class="p-4 mt-2">
+                                                                <div class="d-flex justify-content-between mb-3">
+                                                                    <h5 class="mb-0">서형가</h5>
+                                                                    <div class="ps-2">
+                                                                        <small class="fa fa-star text-primary"></small>
+                                                                        <small class="fa fa-star text-primary"></small>
+                                                                        <small class="fa fa-star text-primary"></small>
+                                                                        <small class="fa fa-star text-primary"></small>
+                                                                        <small class="fa fa-star text-primary"></small>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex mb-3">
+                                                                    <small class="border-end me-3 pe-3"><i
+                                                                            class="fa-solid fa-house-user text-danger me-2x"></i></small>
+                                                                    <small class="border-end me-3 pe-3"><i
+                                                                            class="fa fa-wifi text-primary me-2x"></i></small>
+                                                                    <small class="border-end me-3 pe-3"><i
+                                                                            class="fa fa-bed text-primary me-2x"></i></small>
+                                                                    <small><i class="fa fa-bath text-primary me-2"></i></small>
+                                                                </div>
+                                                                <p class="text-body mb-3">서울 종로구 자하문로5가길 26-1</p>
+                                                                <div class="d-flex justify-content-between">
+                                                                    <a class="btn btn-sm btn-primary rounded py-2 px-4"
+                                                                       href="getGH?SMM_SEQ=214">정보 보기</a>
+                                                                    <a class="btn btn-sm btn-dark rounded py-2 px-4"
+                                                                       href="">예약하기</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                                                        <div class="room-item shadow rounded overflow-hidden">
+                                                            <div class="position-relative">
+                                                                <img class="img-fluid" src="img/GH/GH_JongRo_6.PNG"
+                                                                     alt="">
+                                                                <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">예약
+                                                                    가능</small>
+                                                            </div>
+                                                            <div class="p-4 mt-2">
+                                                                <div class="d-flex justify-content-between mb-3">
+                                                                    <h5 class="mb-0">통인 1939</h5>
+                                                                    <div class="ps-2">
+                                                                        <small class="fa fa-star text-primary"></small>
+                                                                        <small class="fa fa-star text-primary"></small>
+                                                                        <small class="fa fa-star text-primary"></small>
+                                                                        <small class="fa fa-star text-primary"></small>
+                                                                        <small class="fa fa-star text-primary"></small>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex mb-3">
+                                                                    <small class="border-end me-3 pe-3"><i
+                                                                            class="fa-solid fa-house-user text-danger me-2x"></i></small>
+                                                                    <small class="border-end me-3 pe-3"><i
+                                                                            class="fa fa-wifi text-primary me-2x"></i></small>
+                                                                    <small class="border-end me-3 pe-3"><i
+                                                                            class="fa fa-bed text-primary me-2x"></i></small>
+                                                                    <small><i class="fa fa-bath text-primary me-2"></i></small>
+                                                                </div>
+                                                                <p class="text-body mb-3">서울 종로구 자하문로 33-7</p>
+                                                                <div class="d-flex justify-content-between">
+                                                                    <a class="btn btn-sm btn-primary rounded py-2 px-4"
+                                                                       href="getGH?SMM_SEQ=279">정보 보기</a>
+                                                                    <a class="btn btn-sm btn-dark rounded py-2 px-4"
+                                                                       href="">예약하기</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 주변 숙소 끝 -->
+
+
+                        </div>
+
+                        <hr class="my-5"/>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer wow fadeIn" data-wow-delay="0.1s">
+        <div class="container pb-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-3">
+                    <h6 class="section-title text-start text-primary text-uppercase mb-4">연락처</h6>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>경기도 성남시 분당구 그린컴퓨터아카데미</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>010 - 1234 - 5678</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>green@example.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-12">
+                    <div class="row gy-5 g-4">
+                        <div class="col-md-6">
+                            <h6 class="section-title text-start text-primary text-uppercase mb-4">메뉴</h6>
+                            <a class="btn btn-link" href="about">소개</a>
+                            <a class="btn btn-link" href="service">카테고리</a>
+                            <a sec:authorize="isAnonymous()" th:href="@{/user/login}" href="errorPage"
+                               class="btn btn-link">로그인</a>
+                            <a sec:authorize="isAuthenticated()" th:href="@{/profile}" href="errorPage"
+                               class="btn btn-link">마이페이지</a>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="section-title text-start text-primary text-uppercase mb-4">숙소 유형</h6>
+                            <a class="btn btn-link" href="HTList1">호텔</a>
+                            <a class="btn btn-link" href="MTList">모텔</a>
+                            <a class="btn btn-link" href="CPList">캠핑</a>
+                            <a class="btn btn-link" href="GHList">게스트하우스</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">방방곡곡</a>
+
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+</div>
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="lib/wow/wow.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/counterup/counterup.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/tempusdominus/js/moment.min.js"></script>
+<script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+<script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
+</body>
+
+</html>
